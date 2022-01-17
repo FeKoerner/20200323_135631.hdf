@@ -9,9 +9,10 @@ sleep 10
 # file for results
 CSV=speed_results.csv
 
-speedtest --csv-header >> $CSV
+# delete old file
+speedtest --csv-header > $CSV
 while true; do
-    speedtest --server 23610 --csv >> $CSV
+    speedtest --csv >> $CSV
     git add .
     git commit -m "speedtest result upload"
     git push
