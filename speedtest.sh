@@ -11,7 +11,7 @@ CSV=speed_results.csv
 
 speedtest --csv-header >> $CSV
 while true; do
-    speedtest --csv >> $CSV
+    speedtest --server "23610" --csv >> $CSV
     git add .
     git commit -m "speedtest result upload"
     git push
